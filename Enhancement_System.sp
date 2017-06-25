@@ -120,17 +120,17 @@ public OnPluginStart()
 {
 	CreateConVar("EnhanceGore_Version", PLUGIN_VERSION, "Enhancement System Version", FCVAR_PLUGIN|FCVAR_SPONLY|FCVAR_DONTRECORD|FCVAR_NOTIFY);
 
-	hCvar_EnhanceMe = CreateConVar("enhance_gore", "1", "EnableMe = 1 for EnhanceMents (Blood/Gore)", FCVAR_PLUGIN|FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	hCvar_KappaCount = CreateConVar("enhance_particle_cap", "20", "Upper Limit to Particles at once", FCVAR_PLUGIN, true, 1.0, true, 100.0);
-	hCvar_KappaTimer = CreateConVar("enhance_refresh_timer", "0.07", "TimeBefore Another Particle slot is Free (effective change happens on NextRound), e.g. cap is 20 to particles(Default) at once and particle slot refeshes every 0.1 secs(Default value) for +1 slot so if cap is at 0 it will be 2 seconds until 20 slots are free again", FCVAR_PLUGIN, true, 0.0, true, 1.0);
-	hCvar_BloodIndexing = CreateConVar("enhance_blood_indexing", "1", "Save blood pool locations until its gone to create another pool at the same location Better for Client Perf[0 = disable]", FCVAR_PLUGIN, true, 0.0, true, 1.0);
-	hCvar_BloodPool = CreateConVar("enhance_blood_pool", "4", "BloodPool Cap Until refresh period [0 = disable bloodpools]", FCVAR_PLUGIN, true, 0.0, true, 100.0);
-	hCvar_PoolRefresh = CreateConVar("enhance_blood_pool_refresh", "1.0", "BloodPool Refresh Period [0.0 = disable refresh Period Unlimied blood pools]", FCVAR_PLUGIN, true, 0.0, true, 5.0);
-	hCvar_PoolBoomer = CreateConVar("enhance_blood_pool_boomer", "1", "Enable boomer blood pool (Its much bigger than standard) [0 = disable]", FCVAR_PLUGIN, true, 0.0, true, 5.0);
-	hCvar_BloodParticles = CreateConVar("enhance_blood_particles", "1", "Enhance Blood & Gore [0 = disable]", FCVAR_PLUGIN, true, 0.0, true, 1.0);
-	hCvar_BoomerDecals = CreateConVar("enhance_boomer_decals", "0", "EnhanceBoomer Pop with decals, but the clientsided particle system does not show boomerexplode particles, this will add them back in server side", FCVAR_PLUGIN, true, 0.0, true, 1.0); 
-	hCvar_PrecacheWorkAround = CreateConVar("precache_work_around", "1", "If you have stutter due to latepreacaching particles enable this, altho they should already precache OnMapStart", FCVAR_PLUGIN, true, 0.0, true, 1.0); 
-	hCvar_Decals = CreateConVar("enhance_decals", "1", "Enchance Decals to produce more blood splatter on the walls boomer pop decals wont work if this is disabled Autodisabled on(c3m2_swamp & c8m2_subway) Prevent lag", FCVAR_PLUGIN, true, 0.0, true, 1.0); 
+	hCvar_EnhanceMe = CreateConVar("enhance_gore", "1", "EnableMe = 1 for EnhanceMents (Blood/Gore)", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	hCvar_KappaCount = CreateConVar("enhance_particle_cap", "20", "Upper Limit to Particles at once", FCVAR_NOTIFY, true, 1.0, true, 100.0);
+	hCvar_KappaTimer = CreateConVar("enhance_refresh_timer", "0.07", "TimeBefore Another Particle slot is Free (effective change happens on NextRound), e.g. cap is 20 to particles(Default) at once and particle slot refeshes every 0.1 secs(Default value) for +1 slot so if cap is at 0 it will be 2 seconds until 20 slots are free again", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	hCvar_BloodIndexing = CreateConVar("enhance_blood_indexing", "1", "Save blood pool locations until its gone to create another pool at the same location Better for Client Perf[0 = disable]", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	hCvar_BloodPool = CreateConVar("enhance_blood_pool", "4", "BloodPool Cap Until refresh period [0 = disable bloodpools]", FCVAR_NOTIFY, true, 0.0, true, 100.0);
+	hCvar_PoolRefresh = CreateConVar("enhance_blood_pool_refresh", "1.0", "BloodPool Refresh Period [0.0 = disable refresh Period Unlimied blood pools]", FCVAR_NOTIFY, true, 0.0, true, 5.0);
+	hCvar_PoolBoomer = CreateConVar("enhance_blood_pool_boomer", "1", "Enable boomer blood pool (Its much bigger than standard) [0 = disable]", FCVAR_NOTIFY, true, 0.0, true, 5.0);
+	hCvar_BloodParticles = CreateConVar("enhance_blood_particles", "1", "Enhance Blood & Gore [0 = disable]", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	hCvar_BoomerDecals = CreateConVar("enhance_boomer_decals", "0", "EnhanceBoomer Pop with decals, but the clientsided particle system does not show boomerexplode particles, this will add them back in server side", FCVAR_NOTIFY, true, 0.0, true, 1.0); 
+	hCvar_PrecacheWorkAround = CreateConVar("precache_work_around", "1", "If you have stutter due to latepreacaching particles enable this, altho they should already precache OnMapStart", FCVAR_NOTIFY, true, 0.0, true, 1.0); 
+	hCvar_Decals = CreateConVar("enhance_decals", "1", "Enchance Decals to produce more blood splatter on the walls boomer pop decals wont work if this is disabled Autodisabled on(c3m2_swamp & c8m2_subway) Prevent lag", FCVAR_NOTIFY, true, 0.0, true, 1.0); 
 	
 	
 	HookConVarChange(hCvar_EnhanceMe, eConvarChanged);
