@@ -110,7 +110,7 @@ static bool:PrecacheClientList[MAXPLAYERS+1];
 public Plugin:myinfo =
 {
     name = "EnhanceGore",
-    author = "Ludastar (Armonic)",
+    author = "Lux",
     description = "L4D2 Gore Enhancement System",
     version = PLUGIN_VERSION,
     url = "https://forums.alliedmods.net/showthread.php?p=2412026#post2412026"
